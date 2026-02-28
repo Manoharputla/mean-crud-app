@@ -4,6 +4,8 @@
 
 ---
 
+## Project setup
+
 ## Project Overview
 
 This project demonstrates containerization, CI/CD automation, and cloud deployment of a full-stack **MEAN (MongoDB, Express, Angular, Node.js)** application.
