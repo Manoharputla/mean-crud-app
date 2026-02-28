@@ -7,6 +7,7 @@ The application will manage a collection of tutorials, where each tutorial inclu
 ### Node.js Server
 
 cd backend
+
 npm install
 
 You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
