@@ -57,10 +57,10 @@ The application has been:
 
 ## Service - Docker Image
 
-Backend - manohar2024/backend-image
-Frontend - manohar2024/frontend-image
-MongoDB - Official Mongo image
-Nginx - Official Nginx image
+-Backend - manohar2024/backend-image
+-Frontend - manohar2024/frontend-image
+-MongoDB - Official Mongo image
+-Nginx - Official Nginx image
 
 Docker images are built and pushed to Docker Hub through Jenkins pipeline.
 
@@ -79,12 +79,11 @@ Services:
 
 To start the application:
 
-````bash
+```bash
 docker compose up -d
+
+```
 
 ## To deploy the application:
 
-```Open Browser
-http://43.205.127.95
-
-````
+-Open Browser: http://43.205.127.95
