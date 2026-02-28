@@ -1,27 +1,87 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+# DevOps Engineer Internship Assignment
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+## MEAN Stack Application – Docker | CI/CD | AWS | Nginx
 
-## Project setup
+---
 
-### Node.js Server
+## Project Overview
 
-cd backend
+This project demonstrates containerization, CI/CD automation, and cloud deployment of a full-stack **MEAN (MongoDB, Express, Angular, Node.js)** application.
 
-npm install
+The application has been:
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
+- Containerized using Docker
+- Orchestrated using Docker Compose
+- Deployed on an Ubuntu EC2 instance
+- Configured with Nginx Reverse Proxy (Port 80)
+- Automated using Jenkins CI/CD pipeline
 
-Run `node server.js`
+---
 
-### Angular Client
+# Assignment Requirements & Implementation
 
-cd frontend
+---
 
-npm install
+## 1. Repository Setup
 
-Run `ng serve --port 8081`
+- Created a new GitHub repository
+- Pushed complete source code
+- Included:
+  - Backend Dockerfile
+  - Frontend Dockerfile
+  - docker-compose.yml
+  - Nginx configuration
+  - README.md
 
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
+## GitHub URL: https://github.com/Manoharputla/mean-crud-app.git
 
-Navigate to `http://localhost:8081/`
+## 2. Containerization
+
+### Backend
+
+- Base Image: Node
+- Installs dependencies
+- Runs Express server on port 8080
+
+### Frontend
+
+- Multi-stage Docker build
+- Angular production build
+- Served via Nginx
+
+---
+
+## Docker Images
+
+## Service - Docker Image
+
+Backend - manohar2024/backend-image
+Frontend - manohar2024/frontend-image
+MongoDB - Official Mongo image
+Nginx - Official Nginx image
+
+Docker images are built and pushed to Docker Hub through Jenkins pipeline.
+
+---
+
+## 3. Docker Compose Deployment
+
+All services are defined in `docker-compose.yml`.
+
+Services:
+
+- mongo
+- backend
+- frontend
+- nginx
+
+To start the application:
+
+````bash
+docker compose up -d
+
+To deploy the application:
+
+```Open Browser
+http://43.205.127.95
+````
