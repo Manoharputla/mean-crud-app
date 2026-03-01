@@ -37,8 +37,6 @@ The application has been:
   - Screenshots
   - README.md
 
-## GitHub URL: https://github.com/Manoharputla/mean-crud-app.git
-
 ## 2. Containerization
 
 ### Backend
