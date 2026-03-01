@@ -32,7 +32,9 @@ The application has been:
   - Backend Dockerfile
   - Frontend Dockerfile
   - docker-compose.yml
+  - jenkinsfile
   - Nginx configuration
+  - Screenshots
   - README.md
 
 ## GitHub URL: https://github.com/Manoharputla/mean-crud-app.git

@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('git clone') {
+            steps {
+                git 'https://github.com/Manoharputla/mean-crud-app.git'
+            }
+        }
+
+        stage('Build Backend Image') {
+            steps {
+                dir('backend') {
+                    sh 'docker build -t manohar2024/mean-backend:v1 .'
+                }
+            }
+        }
+
+        stage('Build Frontend Image') {
+            steps {
+                dir('frontend') {
+                    sh 'docker build -t manohar2024/mean-frontend:v1 .'
+                }
+            }
+        }
+
+        stage('Push Images to DockerHub') {
+            steps {
+                script{
+                    withDockerRegistry(credentialsId: 'docker') {
+                        sh 'docker push manohar2024/mean-backend:v1'
+                        sh 'docker push manohar2024/mean-frontend:v1'
+                    }
+                }
+            }
+        }
+
+        stage('Deploy Application') {
+            steps {
+                sh '''
+                docker compose pull
+                docker compose down
+                docker compose up -d
+                '''
+            }
+        }
+    }
+}
